@@ -1,0 +1,28 @@
+[project]
+name = "omnivious-api"
+version = "0.3.0"
+description = "Omnivious expressive voice persona API"
+requires-python = ">=3.10"
+dependencies = [
+  "fastapi>=0.116.0",
+  "uvicorn>=0.35.0",
+  "python-multipart>=0.0.20",
+  "sqlalchemy>=2.0.40",
+  "pydantic>=2.11.0",
+  "yt-dlp>=2025.2.19",
+  "mlx==0.30.6",
+  "mlx-lm==0.30.5",
+  "mlx-audio==0.3.1",
+  "soundfile>=0.13.1",
+  "librosa>=0.11.0",
+  "numpy>=2.2.0"
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.4.0",
+  "httpx>=0.28.0"
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]

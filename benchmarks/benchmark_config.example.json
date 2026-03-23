@@ -1,0 +1,57 @@
+{
+  "reference_clip": "benchmarks/reference_clip.wav",
+  "repeats": 3,
+  "prompts": [
+    {
+      "id": "neutral",
+      "text": "I reviewed the draft and left comments on the sections that need clarification."
+    },
+    {
+      "id": "excited",
+      "text": "We did it! The launch worked, traffic is stable, and users are signing up faster than expected!"
+    },
+    {
+      "id": "sad",
+      "text": "I know this is difficult, and I am sorry we could not keep the original plan."
+    },
+    {
+      "id": "whisper_soft",
+      "text": "Keep your voice low for a moment, they are still in the room next door."
+    },
+    {
+      "id": "emphatic",
+      "text": "Stop right there. This is the final warning, and we are not repeating it again."
+    }
+  ],
+  "models": [
+    {
+      "model_id": "resemble-ai/chatterbox-turbo",
+      "command": "python3 scripts/runners/chatterbox_runner.py --model turbo --device auto --text \"{text}\" --reference-clip \"{reference_clip}\" --output-wav \"{output_wav}\""
+    },
+    {
+      "model_id": "Qwen/Qwen3-TTS-12Hz-0.6B-Base",
+      "command": "python3 scripts/runners/qwen3_tts_runner.py --device auto --model-id Qwen/Qwen3-TTS-12Hz-0.6B-Base --reference-text \"This short sample is only for cloning my voice.\" --text \"{text}\" --reference-clip \"{reference_clip}\" --output-wav \"{output_wav}\""
+    },
+    {
+      "model_id": "nari-labs/Dia-1.6B",
+      "command": "python3 scripts/runners/dia_runner.py --device auto --model-id nari-labs/Dia-1.6B-0626 --reference-text \"[S1] This short sample is only for cloning my voice.\" --text \"[S1] {text}\" --reference-clip \"{reference_clip}\" --output-wav \"{output_wav}\""
+    }
+  ],
+  "manual_scores": {
+    "resemble-ai/chatterbox-turbo": {
+      "emotion_control_score": 0,
+      "voice_similarity_score": 0,
+      "operational_simplicity_score": 0
+    },
+    "Qwen/Qwen3-TTS-12Hz-0.6B-Base": {
+      "emotion_control_score": 0,
+      "voice_similarity_score": 0,
+      "operational_simplicity_score": 0
+    },
+    "nari-labs/Dia-1.6B": {
+      "emotion_control_score": 0,
+      "voice_similarity_score": 0,
+      "operational_simplicity_score": 0
+    }
+  }
+}

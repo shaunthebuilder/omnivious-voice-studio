@@ -1,0 +1,46 @@
+# macOS
+.DS_Store
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Node / Next.js
+node_modules/
+apps/web/.next/
+apps/web/tsconfig.tsbuildinfo
+
+# Python caches and virtual environments
+.pytest_cache/
+**/.pytest_cache/
+__pycache__/
+**/__pycache__/
+*.py[cod]
+.python-version
+.venv/
+**/.venv/
+.venv*/
+**/.venv*/
+
+# Python packaging outputs
+*.egg-info/
+dist/
+build/
+
+# Runtime data
+data/omnivious.db
+data/jobs/*
+!data/jobs/.gitkeep
+data/models/*
+!data/models/.gitkeep
+data/outputs/*
+!data/outputs/.gitkeep
+data/personas/*
+!data/personas/.gitkeep
+
+# Editor / swap files
+*.swp
+*.swo
+*.tmp
+
