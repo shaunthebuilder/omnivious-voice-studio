@@ -40,20 +40,20 @@ High-level architecture:
 
 ```mermaid
 flowchart TD
-    web["Next Web App"] --> api["FastAPI API Layer"]
-    api --> jobs["Job Manager"]
-    api --> db["SQLite"]
-    api --> files["Local Filesystem Data"]
-    jobs --> ingest["Ingest And Normalization"]
-    jobs --> persona["Persona Service"]
-    jobs --> style["Style Compiler And Segment Planner"]
-    jobs --> tts["TTS Service"]
-    jobs --> identity["Identity Scorer"]
-    tts --> preview["Preview Engine"]
-    tts --> final["Final Engine"]
-    persona --> files
-    tts --> files
-    identity --> files
+    web_node["Next Web App"] --> api_node["FastAPI API Layer"]
+    api_node --> jobs_node["Job Manager"]
+    api_node --> db_node["SQLite"]
+    api_node --> files_node["Local Filesystem Data"]
+    jobs_node --> ingest_node["Ingest And Normalization"]
+    jobs_node --> persona_node["Persona Service"]
+    jobs_node --> style_node["Style Compiler And Segment Planner"]
+    jobs_node --> tts_node["TTS Service"]
+    jobs_node --> identity_node["Identity Scorer"]
+    tts_node --> preview_node["Preview Engine"]
+    tts_node --> final_node["Final Engine"]
+    persona_node --> files_node
+    tts_node --> files_node
+    identity_node --> files_node
 ```
 
 ## Core Features
